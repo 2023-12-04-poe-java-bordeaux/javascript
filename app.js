@@ -1,48 +1,15 @@
-// Tableaux vides
-const tb = new Array();
-const tb2 = []; //
-
-tb2[0] = 12;
-tb2[1] = 35;
-tb2[2] = 45;
-tb2.push(78);
-tb2.push(12);
-
-// Création + Initialisation
-const countries = ["France", "Belgium", "Spain"];
-countries.push("China");
-countries.push("Japan");
-countries.push("USA");
-
-// for (let i = 0; i < countries.length; i++) {
-//   console.log(countries[i]);
-// }
-
-for (let country of countries) {
-  console.log(country);
+function sum(a, b) {
+  return a + b;
 }
+// console.log(sum(3, 4));
 
-const brazil = ["Ronaldo", "R.Carlos", "Dunga", "Rivaldo", "Ze Roberto"];
-const brazil2 = brazil; // Copie de la reference
-const brazil3 = [...brazil]; // Utilisation du spread operator pour copier les valeurs(non la reference)
-
-// Merge des tableaux
-const fcBarcelona2006Brazilians = [
-  "Ronaldinho",
-  "Silvinho",
-  "Belleti",
-  "Edmilson",
-];
-
-const realMadrid2006Brazilians = [
-  "Ronaldo",
-  "Robinho",
-  "Julio Baptista",
-  "Cicinho",
-  "R. Carlos",
-];
-
-const brazilWC2006 = [
-  ...fcBarcelona2006Brazilians,
-  ...realMadrid2006Brazilians,
-];
+// function sayHello(name) {
+//   console.log("Hello %s", name);
+//   console.log("Hello " + name);
+//   console.log(`Hello ${name}`);
+// }
+let nombre1 = Number(prompt("Premier nombre : "));
+let nombre2 = Number(prompt("Deuxième nombre : "));
+let somme = sum(nombre1, nombre2);
+alert(nombre1 + " + " + nombre2 + " = " + somme);
+alert(`${nombre1} + ${nombre2} = ${somme}`);

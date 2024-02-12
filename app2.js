@@ -1,22 +1,28 @@
-const countries = ["France", "Belgium", "Spain"];
+// V1
+function sumOfMultiplesOf3(arr) {
+  let sum = 0;
+  for (let num of arr) {
+    if (num % 3 === 0) {
+      sum += num;
+    }
+  }
+  return sum;
+}
 
-// push() : Ajouter à la fin -> O(1)
-countries.push("China");
-countries.push("Japan");
-countries.push("USA");
+console.log(sumOfMultiplesOf3([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-// pop() : O(1)
-// 1. Copie la valeur du dernier element dans une variable
-// 2. Supprime à la fin du tableau
-// 3. Retourne la valeur supprimée
-countries.pop(); // Cette instruction supprime "USA"
-countries.pop(); // Cette instruction supprime "Japan"
+// v2
+function sumOfMultiplesOf(n, arr) {
+  let sum = 0;
+  for (let num of arr) {
+    if (num % n === 0) {
+      sum += num;
+    }
+  }
+  return sum;
+}
 
-// shift() : O(n)
-// 1. Copie la valeur du premier element dans une variable
-// 2. Supprime au début du tableau
-// 3. Retourne la valeur supprimée
-countries.shift(); // Supprimer "France"
+console.log(sumOfMultiplesOf(3, [1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(sumOfMultiplesOf(2, [1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-// unshift : Ajouter au début-> O(n)
-countries.unshift("Portugal");
+
