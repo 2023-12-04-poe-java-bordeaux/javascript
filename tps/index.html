@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tp</title>
+  </head>
+  <body>
+    <script id="tp"></script>
+    <script>
+      const tp = parseInt(prompt("Quel TP souhaitez-vous lancer?"));
+      const script = document.querySelector("#tp");
+
+      script.setAttribute("src", `./tp${tp}.js`);
+    </script>
+  </body>
+</html>
