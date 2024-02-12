@@ -1,14 +1,15 @@
-const tab = [];
-for (let i = 0; i < 10; i++) {
-  tab.push(Math.floor(Math.random() * 10) - 5);
-}
+function produitDesElementsPositifs(arr) {
+  const elementsPositifs = arr.filter((element) => element > 0);
 
-let produit = 1;
-for (let i = 0; i < tab.length; i++) {
-  if (tab[i] > 0) {
-    produit *= tab[i];
+  if (elementsPositifs.length === 0) {
+    return 0;
   }
+
+  const produit = elementsPositifs.reduce((acc, val) => acc * val, 1);
+
+  return produit;
 }
 
-console.log("Tableau : ", tab);
-console.log("Produit des positifs :", produit);
+console.log(produitDesElementsPositifs([1, -2, 3, 4, -5, 0, 6])); // Devrait afficher 72 (1 * 3 * 4 * 6)
+console.log(produitDesElementsPositifs([-1, -2, -3, 0])); // Devrait afficher 0 car aucun élément positif
+console.log(produitDesElementsPositifs([2, 5])); // Devrait afficher 10 (2 * 5)
