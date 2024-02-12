@@ -1,28 +1,15 @@
-// V1
-function sumOfMultiplesOf3(arr) {
-  let sum = 0;
-  for (let num of arr) {
-    if (num % 3 === 0) {
-      sum += num;
-    }
-  }
-  return sum;
+function Product(id, designation, description, price) {
+  // Comportement avec le mot clé "new"
+  // {}
+  this.id = id; // {id:1}
+  this.designation = designation; //{id:1, designation:"Iphone 15 Pro Max"}
+  this.description = description; //{id:1, designation:"Iphone 15 Pro Max",description:"Abc"}
+  this.price = price; //{id:1, designation:"Iphone 15 Pro Max",description:"Abc",price:1900}
+  // return {id:1, designation:"Iphone 15 Pro Max",description:"Abc",price:1900}
 }
 
-console.log(sumOfMultiplesOf3([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// :D :D
+const iphoneBad = Product(1, "Iphone 15 Pro Max", "Abc", 1900);
 
-// v2
-function sumOfMultiplesOf(n, arr) {
-  let sum = 0;
-  for (let num of arr) {
-    if (num % n === 0) {
-      sum += num;
-    }
-  }
-  return sum;
-}
-
-console.log(sumOfMultiplesOf(3, [1, 2, 3, 4, 5, 6, 7, 8, 9]));
-console.log(sumOfMultiplesOf(2, [1, 2, 3, 4, 5, 6, 7, 8, 9]));
-
-
+// Best practice
+const iphone = new Product(1, "Iphone 15 Pro Max", "Abc", 1900);

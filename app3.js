@@ -1,20 +1,16 @@
-function sumOfMultiplesOf(n, arr) {
-  let sum = 0;
-  for (let num of arr) {
-    if (num % n === 0) {
-      sum += num;
-    }
-  }
-  return sum;
+function Product(id, designation, description, price) {
+  this.id = id;
+  this.designation = designation;
+  this.description = description;
+  this.price = price;
+  // this.prixTTC = function () {
+  //   return this.price * 1.2;
+  // };
 }
 
-const tab1 = [1, 2, 3, 4, 5];
-const tab2 = [5, 7, 8, 9, 12, 15];
-const tab3 = [23, 24, 25, 27, 49, 81];
+Product.prototype.prixTTC = function () {
+  return this.price * 1.2;
+};
 
-let sum =
-  sumOfMultiplesOf3(3, tab1) +
-  sumOfMultiplesOf3(3, tab2) +
-  sumOfMultiplesOf3(3, tab3);
-
-console.log(`Sum : ${sum}`);
+const iphone = new Product(1, "Iphone 15 Pro Max", "Abc", 1900);
+const s25 = new Product(2, "Galaxy S 25", "EFG", 1300);
