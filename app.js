@@ -1,76 +1,33 @@
-const product = {
-  id: 1,
-  designation: "Iphone 15 Pro Max",
-  description:
-    "When measured as a standard rectangular shape, the screen is 6.12 inches diagonally (actual viewable area is less). iPhone 15 Plus. Super Retina XDR display. 6.7‑inch (diagonal) all‑screen OLED display. 2796‑by‑1290-pixel resolution at 460 ppi.",
-  price: 2500,
-  stock: 200,
-  prixTTC() {
-    return price * 1.2;
-  },
-};
+const technos = document.querySelectorAll("li");
 
-// console.log(`ID : ${product.id}`);
-// console.log(`Designation : ${product.designation}`);
-// console.log(`Price : ${product.price}`);
-// console.log(`Description : ${product.description}`);
+// console.log(technos[0].innerText);
 
-// Sans destructuration
-// console.log(`
-//  # : ${product.id}
-//  Designation : ${product.designation}
-//  Description: ${product.description}
-//  Price : ${product.price}
-// `);
+// for (let i = 0; i < technos.length; i++) {
+//   console.log(technos[i].innerText);
+// }
 
-// Avec Destructuration
-const { id, designation, description, price } = product;
+for (const techno of technos) {
+  console.log(techno.innerText);
+  // techno.innerText = "J'ai faim";
+}
 
-// let id = product.id;
-// let designation = product.designation;
-// let description = product.description;
-// let price = product.price;
+const framworks = [
+  "Nest.js",
+  "Spring",
+  "Asp Dotnet Core",
+  "Ruby On Rails",
+  "Angular",
+  "Symfony",
+  "Laravel",
+  "Dynamo",
+];
 
-console.log(`
- # : ${id}
- Designation : ${designation}
- Description: ${description}
- Price : ${price}
- Price TTC : ${product.prixTTC()}
-`);
+// TP1
+// Remplacer tous les elements du DOM avec le tableaux ci-dessus
 
-const user = {
-  id: 1,
-  name: "Christian Lisangola",
-  email: "christian.lisangola@gmail.com",
-  address: {
-    street: "Abc",
-    city: "Efg",
-    zipCode: "3673637",
-    // geo: [-37.3433, 81.1445],
-    geo: {
-      lat: -37.3433,
-      lng: 81.1445,
-    },
-  },
-};
-
-const {
-  name,
-  email,
-  address: {
-    street,
-    city,
-    zipCode,
-    geo: { lat, lng },
-  },
-} = user;
-
-console.log(`
-name : ${name}
-Email : ${email}
-Street : ${street}
-City : ${city}
-Zip code : ${zipCode}
-LatLon : [${lat},${lng}]
-`);
+// TP2
+// Dans l'affichage, vous devez avoir "nom_de_classe - technologie"
+// Exemple :
+//   Frontend - HTML
+//   Server side - Nest.js
+//   Database - Mongo DB
