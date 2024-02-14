@@ -1,10 +1,15 @@
-import users from "./users.js";
-
 const $users = document.querySelector("#usersList");
 
-for (const user of users) {
-  $users.innerHTML += CreateUser(user);
-}
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    // console.log(data);
+    for (const user of data) {
+      $users.innerHTML += CreateUser(user);
+    }
+  });
 
 function CreateUser(user) {
   return `

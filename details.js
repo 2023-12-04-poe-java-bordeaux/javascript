@@ -1,5 +1,3 @@
-import users from "./users.js";
-
 const urlParams = new URLSearchParams(location.search);
 
 const id = parseInt(urlParams.get("id"));
