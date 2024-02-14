@@ -1,24 +1,21 @@
-const framworks = [
-  "Nest.js",
-  "Spring",
-  "Asp Dotnet Core",
-  "Ruby On Rails",
-  "Angular",
-  "Symfony",
-  "Laravel",
-  "Dynamo",
-];
+import users from "./users.js";
 
-const technos = document.querySelector(".technos");
+const $users = document.querySelector("#usersList");
 
-// for (const framwork of framworks) {
-//   technos.innerHTML += `<li>${framwork}</li>`;
-// }
+for (const user of users) {
+  $users.innerHTML += CreateUser(user);
+}
 
-const addTechButton = document.querySelector("#add-tech");
-
-addTechButton.addEventListener("click", function () {
-  const elementToInsert = framworks.shift();
-  technos.innerHTML += `<li>${elementToInsert}</li>`;
-  console.log(framworks);
-});
+function CreateUser(user) {
+  return `
+    <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.address.city}</td>
+        <td>${user.phone}</td>
+        <td>${user.company.name}</td>
+        <td><a href="details.html?id=${user.id}">Voir</a></td>
+    </tr>
+    `;
+}
